@@ -24,14 +24,20 @@ export class AppFooter extends PolymerElement {
                   vertical-align: bottom;
                 }
 
-                .footer-link {
+                .footer-link:visited, .footer-link:link, .footer-link:active {
+                  color: inherit;
                   text-decoration: none;
+                }
+
+                .footer-link:hover {
+                  text-decoration: none;
+                  color: rgba(53, 129, 184, 0.7);
                 }
             </style>
             
            <div class="footer">
         
-                Made With <img class="footer-logo" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
+                Made With <img class="footer-logo" alt="polymer" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
            </div>`;
     }
 
