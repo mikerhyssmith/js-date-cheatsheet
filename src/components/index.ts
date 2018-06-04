@@ -1,12 +1,14 @@
 import * as kebabCase from 'lodash/fp/kebabCase';
 import { MyApp } from './app';
 import { AppFooter } from './footer';
+import { MomentParser } from './moment-parser';
 
 
 // add custom elements here
 const elements = {
     MyApp,
-    AppFooter
+    AppFooter,
+    MomentParser
 };
 
 // register all components as kebab case
