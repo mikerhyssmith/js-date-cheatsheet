@@ -18,11 +18,20 @@ export class AppFooter extends PolymerElement {
                   padding: 1rem;
                   text-align: center;
                 }
+
+                .footer-logo {
+                  width: 16px;
+                  vertical-align: bottom;
+                }
+
+                .footer-link {
+                  text-decoration: none;
+                }
             </style>
             
            <div class="footer">
         
-                Made With <img src='static/images/polymer.png'>
+                Made With <img class="footer-logo" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
            </div>`;
     }
 
