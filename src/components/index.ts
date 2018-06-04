@@ -1,10 +1,12 @@
 import * as kebabCase from 'lodash/fp/kebabCase';
 import { MyApp } from './app';
+import { AppFooter } from './footer';
 
 
 // add custom elements here
 const elements = {
-    MyApp
+    MyApp,
+    AppFooter
 };
 
 // register all components as kebab case
