@@ -1,29 +1,55 @@
-// import { LitElement, html } from '@polymer/polymer/polymer-element';
-// import '@polymer/polymer/lib/elements/dom-if';
-// import Library from '../../models/Library';
+import {LitElement, html} from '@polymer/lit-element';
+import Library from '../../models/Library';
 
-// export class LibraryNavigation extends LitElement {
+export class LibraryNavigation extends LitElement {
 
-//     static get properties() {
-//         return {
-//           libraries: Array<Library>
-//         }
-//     }
+    static get properties() {
+        return {
+            libraries: { 
+                type: Array<Library>(),
+                readOnly: true
+            },
+            activeLibrary: String
+        }
+    }
 
-//     constructor() {
-//         super();
-//     }
+    constructor() {
+        super();
+        this.libraries = [
+            new Library('Moment', 100, false, false),
+            new Library('Luxon', 100, false, false),
+            new Library('date-fns', 100, false, false)
+        ];
+        this.activeLibrary = 'Moment';
+    }
 
-//     // Define a string template instead of a `<template>` element.
-//     _render({libraries}) {
-//         return html`
-//             <style>
+    // Define a string template instead of a `<template>` element.
+    _render({libraries, activeLibrary}) {
+
+        return html`
+            <style>
+                .tab-group {
+                    display: flex;
+                    width: 300px;
+                }
+
+                .tab {
+                    flex: 1;
+                    border-bottom: 1px solid #FDFFFC;
+                }
+
+                .tab.is-active {
+                    border-bottom: 1px solid #41EAD4; 
+                }
       
-//             </style>
-            
-//            <div class="footer">
-        
-//                 Made With <img class="footer-logo" alt="polymer" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
-//            </div>`;
-//     }
-// }
+            </style>
+            <div class="tab-group">
+                ${libraries.map((library) => html`
+                    ${(library.name === activeLibrary)? 
+                        html`<div class="tab is-active">${library.name}</div>`:
+                        html`<div class="tab">${library.name}</div>`  }  
+                `)}
+            </div>
+           `;
+    }
+}

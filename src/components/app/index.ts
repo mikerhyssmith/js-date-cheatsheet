@@ -7,7 +7,7 @@ export class MyApp extends LitElement {
     constructor() {
         super();
     }
-    
+
     // Define a string template instead of a `<template>` element.
     _render() {
         return html`
@@ -25,8 +25,8 @@ export class MyApp extends LitElement {
             
             <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
 
-            <navigation>
-            </navigaton>
+            <library-navigation>
+            </library-navigation>
             
             <app-footer>
             </app-footer>`;
