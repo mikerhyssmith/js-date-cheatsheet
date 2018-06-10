@@ -17,14 +17,24 @@ export class NavigationTab extends LitElement {
 
         return html`
             <style>
-
                 .tab {
                     flex: 1;
-                    border-bottom: 1px solid #FDFFFC;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-bottom: 2px solid #FDFFFC;
+                    -o-transition:.7s;
+                    -ms-transition:.7s;
+                    -moz-transition:.7s;
+                    -webkit-transition:.7s;
+                    transition:.7s;
+                }
+
+                .tab:hover {
+                    border-bottom: 2px solid #41EAD4; 
                 }
 
                 .tab.is-active {
-                    border-bottom: 1px solid #41EAD4; 
+                    border-bottom: 2px solid #41EAD4; 
                 }
       
             </style>

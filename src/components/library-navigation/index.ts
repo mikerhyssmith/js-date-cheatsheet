@@ -30,16 +30,8 @@ export class LibraryNavigation extends LitElement {
             <style>
                 .tab-group {
                     display: flex;
-                    width: 300px;
-                }
-
-                .tab {
-                    flex: 1;
-                    border-bottom: 1px solid #FDFFFC;
-                }
-
-                .tab.is-active {
-                    border-bottom: 1px solid #41EAD4; 
+                    width: 250px;
+                    justify-content: space-between;
                 }
       
             </style>
