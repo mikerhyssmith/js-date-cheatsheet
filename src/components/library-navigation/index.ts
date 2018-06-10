@@ -16,6 +16,7 @@ export class LibraryNavigation extends LitElement {
     constructor() {
         super();
         this.libraries = [
+            new Library('Date', 100, false, false),
             new Library('Moment', 100, false, false),
             new Library('Luxon', 100, false, false),
             new Library('date-fns', 100, false, false)
@@ -30,7 +31,7 @@ export class LibraryNavigation extends LitElement {
             <style>
                 .tab-group {
                     display: flex;
-                    width: 250px;
+                    width: 325px;
                     justify-content: space-between;
                 }
       

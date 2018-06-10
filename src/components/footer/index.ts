@@ -37,7 +37,7 @@ export class AppFooter extends LitElement {
             
            <div class="footer">
         
-                Made With <img class="footer-logo" alt="polymer" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
+                Built with <img class="footer-logo" alt="polymer" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
            </div>`;
     }
 
