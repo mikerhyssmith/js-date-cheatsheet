@@ -11,10 +11,18 @@ export class MyApp extends PolymerElement {
                 .title {
                     text-align: center;
                 }
+                
+                .header-logo {
+                    width: 32px;
+                    vertical-align: bottom;
+                }
 
             </style>
             
-            <h1 class="title">Moment to date-fns cheatsheet</h1>
+            <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
+
+            <navigation>
+            </navigaton>
             
             <app-footer>
             </app-footer>`;
