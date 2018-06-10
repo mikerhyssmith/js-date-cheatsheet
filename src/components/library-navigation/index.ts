@@ -45,9 +45,7 @@ export class LibraryNavigation extends LitElement {
             </style>
             <div class="tab-group">
                 ${libraries.map((library) => html`
-                    ${(library.name === activeLibrary)? 
-                        html`<div class="tab is-active">${library.name}</div>`:
-                        html`<div class="tab">${library.name}</div>`  }  
+                    <navigation-tab name=${library.name} active=${library.name === activeLibrary} />
                 `)}
             </div>
            `;
