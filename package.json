@@ -9,6 +9,7 @@
     "build": "webpack --config ./config/webpack.prod.conf.js"
   },
   "dependencies": {
+    "@polymer/lit-element": "^0.5.1",
     "@polymer/polymer": "3.0.2",
     "@webcomponents/webcomponentsjs": "^1.0.8",
     "lodash": "^4.17.4",

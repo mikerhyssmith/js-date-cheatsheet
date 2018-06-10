@@ -1,11 +1,11 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element';
+import {LitElement, html} from '@polymer/lit-element';
 import '@polymer/polymer/lib/elements/dom-if';
 
-export class AppFooter extends PolymerElement {
+export class AppFooter extends LitElement {
 
 
     // Define a string template instead of a `<template>` element.
-    static get template() {
+    _render() {
         return html`
             <style>
                 .footer {

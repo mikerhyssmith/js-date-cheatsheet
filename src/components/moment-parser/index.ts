@@ -5,7 +5,7 @@ export class MomentParser extends PolymerElement {
 
 
     // Define a string template instead of a `<template>` element.
-    static get template() {
+    _render() {
         return html`
             <style>
 

@@ -1,11 +1,15 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element';
+import {LitElement, html} from '@polymer/lit-element';
 import '@polymer/polymer/lib/elements/dom-if';
 
-export class MyApp extends PolymerElement {
+export class MyApp extends LitElement {
 
-
+    
+    constructor() {
+        super();
+    }
+    
     // Define a string template instead of a `<template>` element.
-    static get template() {
+    _render() {
         return html`
             <style>
                 .title {
@@ -26,9 +30,5 @@ export class MyApp extends PolymerElement {
             
             <app-footer>
             </app-footer>`;
-    }
-
-    constructor() {
-        super();
     }
 }
