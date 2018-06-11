@@ -1,45 +1,34 @@
 import {LitElement, html} from '@polymer/lit-element';
-import Library from '../../models/Library';
 
 export class LibraryNavigation extends LitElement {
 
-    static get properties() {
-        return {
-            libraries: { 
-                type: Array<Library>(),
-                readOnly: true
-            },
-            activeLibrary: String
-        }
-    }
-
     constructor() {
         super();
-        this.libraries = [
-            new Library('Date', 100, false, false),
-            new Library('Moment', 100, false, false),
-            new Library('Luxon', 100, false, false),
-            new Library('date-fns', 100, false, false)
-        ];
-        this.activeLibrary = 'Moment';
     }
 
-    // Define a string template instead of a `<template>` element.
-    _render({libraries, activeLibrary}) {
+    _render() {
 
         return html`
             <style>
-                .tab-group {
-                    display: flex;
-                    width: 325px;
-                    justify-content: space-between;
-                }
+            .arrows {
+                flex: 0;
+                width: 50px;
+                height: 50px;
+            }
+
+            .navigation {
+                display: flex;
+                justify-content: space-between;
+                width: 60%;
+                margin: 0 auto;
+            }
       
             </style>
-            <div class="tab-group">
-                ${libraries.map((library) => html`
-                    <navigation-tab name=${library.name} active=${library.name === activeLibrary} />
-                `)}
+            
+            <div class="navigation">
+                <tab-group> </tab-group>
+                <img class="arrows" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
+                <tab-group></tab-group>
             </div>
            `;
     }

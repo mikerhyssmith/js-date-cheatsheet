@@ -3,6 +3,7 @@ import { MyApp } from './app';
 import { AppFooter } from './footer';
 import { MomentParser } from './moment-parser';
 import { LibraryNavigation } from './library-navigation';
+import { TabGroup } from './library-navigation/tab-group';
 import { NavigationTab } from './library-navigation/tab';
 
 
@@ -12,7 +13,8 @@ const elements = {
     AppFooter,
     MomentParser,
     LibraryNavigation,
-    NavigationTab
+    NavigationTab,
+    TabGroup
 };
 
 // register all components as kebab case
