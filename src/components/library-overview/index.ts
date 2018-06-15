@@ -1,7 +1,7 @@
 import { LitElement, html } from '@polymer/lit-element';
 import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
 import '@polymer/paper-card/paper-card.js';
-import '@polymer/paper-button/paper-button.js';
+import '@polymer/paper-icon-button/paper-icon-button.js';
 import Library from '../../models/Library';
 
 export class LibraryOverview extends LitElement {
@@ -72,6 +72,18 @@ export class LibraryOverview extends LitElement {
                 .library-card-link {
                     text-decoration: none;
                 }
+
+                .library-card-link > img {
+                    width: 25px;
+                }
+
+                .card-actions {
+                    padding: 0 16px;
+                }                
+
+                .image-buttons {
+                    float: right;
+                }
             
             </style>
             
@@ -91,12 +103,12 @@ export class LibraryOverview extends LitElement {
                     </div>
                 </div>
                 <div class="card-actions">
-                    <div class="horizontal justified">
+                    <div class="horizontal justified image-buttons">
                         <a href="${library.website}" class="library-card-link" tabindex="-1">
-                            <paper-button>Website</paper-button>
+                            <paper-icon-button src="static/website.svg" alt="website" title="website"></paper-icon-button>
                         </a>
                         <a href="${library.github}" class="library-card-link"  tabindex="-1">
-                            <paper-button>Github</paper-button>
+                            <paper-icon-button src="static/github.png" alt="github" title="github"></paper-icon-button>
                         </a>
                     </div>
                 </div>

@@ -12,6 +12,7 @@
     "@polymer/lit-element": "^0.5.1",
     "@polymer/paper-button": "^3.0.0-pre.19",
     "@polymer/paper-card": "^3.0.0-pre.19",
+    "@polymer/paper-icon-button": "^3.0.0-pre.19",
     "@polymer/polymer": "3.0.2",
     "@webcomponents/webcomponentsjs": "^1.0.8",
     "lodash": "^4.17.4",
