@@ -5,27 +5,21 @@ export class TabGroup extends LitElement {
 
     static get properties() {
         return {
-            libraries: { 
-                type: Array<Library>(),
+            navigationItems: { 
+                type: Array<String>(),
                 readOnly: true
             },
-            activeLibrary: String
+            activeItem: String
         }
     }
 
     constructor() {
         super();
-        this.libraries = [
-            new Library('Date', 100, false, false),
-            new Library('Moment', 100, false, false),
-            new Library('Luxon', 100, false, false),
-            new Library('date-fns', 100, false, false)
-        ];
-        this.activeLibrary = 'Moment';
+        this.activeItem = 'Moment';
     }
 
     // Define a string template instead of a `<template>` element.
-    _render({libraries, activeLibrary}) {
+    _render({navigationItems, activeItem}) {
 
         return html`
             <style>
@@ -37,8 +31,8 @@ export class TabGroup extends LitElement {
       
             </style>
             <div class="tab-group">
-                ${libraries.map((library) => html`
-                    <navigation-tab name=${library.name} active=${library.name === activeLibrary} />
+                ${navigationItems.map((item) => html`
+                    <navigation-tab name=${item} active=${item === activeItem} />
                 `)}
             </div>
            `;

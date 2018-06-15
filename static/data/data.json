@@ -1,0 +1,3 @@
+{
+    "libraries": ["date-fns", "date", "luxon", "moment"]
+}

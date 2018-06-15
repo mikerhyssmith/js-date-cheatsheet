@@ -2,11 +2,21 @@ import {LitElement, html} from '@polymer/lit-element';
 
 export class LibraryNavigation extends LitElement {
 
+    static get properties() {
+        return {
+            navigationItems: { 
+                type: Array<String>(),
+                readOnly: true
+            },
+            activeItem: String
+        }
+    }
+
     constructor() {
         super();
     }
 
-    _render() {
+    _render({navigationItems}) {
 
         return html`
             <style>
@@ -26,9 +36,9 @@ export class LibraryNavigation extends LitElement {
             </style>
             
             <div class="navigation">
-                <tab-group> </tab-group>
+                <tab-group navigationItems="${navigationItems}"> </tab-group>
                 <img class="arrows" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
-                <tab-group></tab-group>
+                <tab-group navigationItems="${navigationItems}"></tab-group>
             </div>
            `;
     }
