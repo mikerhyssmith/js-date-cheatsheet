@@ -1,18 +1,19 @@
 import {LitElement, html} from '@polymer/lit-element';
 import '@polymer/polymer/lib/elements/dom-if';
+import { LibraryResponse, LibraryObjectResponse } from '../../interfaces/LibraryResponse';
 
 export class MyApp extends LitElement {
 
     static get properties() {
         return {
-            libraries: Array<String>()
+            libraries: Array<LibraryObjectResponse>()
         }
     }
     
     constructor() {
         super();
 
-        this.getData().then(response => {
+        this.getData().then((response: LibraryResponse) => {
             this.libraries = response.libraries;
         });
     }
@@ -35,7 +36,8 @@ export class MyApp extends LitElement {
             
             <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
             
-           <library-navigation navigationItems="${libraries}"></library-navigation>
+            <library-navigation libraryItems="${libraries}"></library-navigation>
+          
             
             <app-footer>
             </app-footer>`;

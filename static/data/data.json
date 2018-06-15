@@ -1,3 +1,7 @@
 {
-    "libraries": ["date-fns", "date", "luxon", "moment"]
+    "libraries": [
+        {"name": "date-fns", "prettyName": "date-fns"}, 
+        {"name": "date", "prettyName": "Date"},
+        {"name": "luxon", "prettyName": "Luxon"},
+        {"name": "moment", "prettyName": "moment"} ]
 }

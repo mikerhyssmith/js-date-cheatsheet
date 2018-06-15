@@ -1,23 +1,24 @@
 import {LitElement, html} from '@polymer/lit-element';
+import { LibraryObjectResponse } from '../../interfaces/LibraryResponse';
 
 export class LibraryNavigation extends LitElement {
 
     static get properties() {
         return {
-            navigationItems: { 
-                type: Array<String>(),
+            libraryItems: { 
+                type: Array<LibraryObjectResponse>(),
                 readOnly: true
             },
             activeItem: String
         }
     }
 
-    constructor() {
-        super();
+    _shouldRender({libraryItems}) {
+        return libraryItems !== undefined;
     }
 
-    _render({navigationItems}) {
-
+    _render({ libraryItems }) {
+        const navigationItems = libraryItems.map(item => item.prettyName);
         return html`
             <style>
             .arrows {
