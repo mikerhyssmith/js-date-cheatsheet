@@ -37,7 +37,7 @@ export class MyApp extends LitElement {
             <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
             
             <library-navigation libraryItems="${libraries}"></library-navigation>
-          
+            <library-overview></library-overview>
             
             <app-footer>
             </app-footer>`;
