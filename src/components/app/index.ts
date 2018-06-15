@@ -31,13 +31,29 @@ export class MyApp extends LitElement {
                     vertical-align: bottom;
                 }
 
+                .library-overviews {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 1100px;
+                    margin: 0 auto;
+                }
+
+                .library-overview-item {
+                    margin: 10px;
+                }
+
 
             </style>
             
             <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
+            <div class ="library-overviews"> 
+                ${libraries ? html`  ${libraries.map((item) => html` <div class="library-overview-item"> <library-overview libraryName="${item.name}"></library-overview> </div> `)}` : html `` }
+            </div>
+            
             
             <library-navigation libraryItems="${libraries}"></library-navigation>
-            <library-overview></library-overview>
+            
             
             <app-footer>
             </app-footer>`;

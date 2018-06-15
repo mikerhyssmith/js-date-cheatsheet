@@ -1,4 +1,5 @@
 import { LitElement, html } from '@polymer/lit-element';
+import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
 import '@polymer/paper-card/paper-card.js';
 import '@polymer/paper-button/paper-button.js';
 import Library from '../../models/Library';
@@ -7,13 +8,30 @@ export class LibraryOverview extends LitElement {
 
     static get properties() {
         return {
-            library: Library
+            library: Library,
+            libraryName: String
         }
     }
 
     constructor() {
         super();
-        this.library = new Library("Moment", 200, false, true, "https://github.com/moment/moment/", "https://momentjs.com/", "static/moment.svg");
+    }
+
+    ready() {
+        super.ready();
+        
+        afterNextRender (this, function() {
+            // @ts-ignore
+            this.getLibraryData(this.libraryName).then((response) => {
+                // @ts-ignore
+                this.library = response;
+            });
+        });
+    
+    }
+
+    _shouldRender({libraryName}) {
+        return libraryName !== undefined;
     }
 
     _render({library}) {
@@ -57,7 +75,8 @@ export class LibraryOverview extends LitElement {
             
             </style>
             
-            <paper-card class="library-overview">
+            ${library? 
+                    html`<paper-card class="library-overview">
                 <div class="card-content">
                     <div class="library-header">
                         <div class="library-logo">⌚</div>
@@ -81,8 +100,15 @@ export class LibraryOverview extends LitElement {
                         </a>
                     </div>
                 </div>
-            </paper-card>
+            </paper-card>`:
+            html`<div >Loading....</div>` }
            `;
+    }
+
+    private getLibraryData(libraryName) {
+        return fetch(`static/data/${libraryName}-overview.json`).then((response) => {
+            return response.json();
+        });
     }
 }
 
