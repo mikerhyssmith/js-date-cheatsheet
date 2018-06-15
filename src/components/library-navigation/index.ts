@@ -9,15 +9,22 @@ export class LibraryNavigation extends LitElement {
                 type: Array<LibraryObjectResponse>(),
                 readOnly: true
             },
-            activeItem: String
+            activeItemLeft: String,
+            activeItemRight: String
         }
+    }
+
+    constructor() {
+        super();
+        this.activeItemLeft = 'moment';
+        this.activeItemRight = 'date-fns';
     }
 
     _shouldRender({libraryItems}) {
         return libraryItems !== undefined;
     }
 
-    _render({ libraryItems }) {
+    _render({ libraryItems, activeItemLeft, activeItemRight }) {
         const navigationItems = libraryItems.map(item => item.prettyName);
         return html`
             <style>
@@ -37,9 +44,9 @@ export class LibraryNavigation extends LitElement {
             </style>
             
             <div class="navigation">
-                <tab-group navigationItems="${navigationItems}"> </tab-group>
+                <tab-group navigationItems="${navigationItems}" activeItem="${activeItemLeft}"> </tab-group>
                 <img class="arrows" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
-                <tab-group navigationItems="${navigationItems}"></tab-group>
+                <tab-group navigationItems="${navigationItems}" activeItem="${activeItemRight}"></tab-group>
             </div>
            `;
     }

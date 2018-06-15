@@ -13,11 +13,6 @@ export class TabGroup extends LitElement {
         }
     }
 
-    constructor() {
-        super();
-        this.activeItem = 'Moment';
-    }
-
     // Define a string template instead of a `<template>` element.
     _render({navigationItems, activeItem}) {
 
