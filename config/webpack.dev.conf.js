@@ -34,15 +34,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist'], { verbose: true, root: path.resolve(__dirname, '..') }),
-    // new CommonsChunkPlugin({
-    //   // The order of this array matters
-    //   names: ['vendor'],
-    //   minChunks: Infinity
-    // }),
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
-    // copy custom static assets
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
@@ -53,7 +47,6 @@ module.exports = {
         from: path.resolve(__dirname, '../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js')
       }
     ]),
-    new webpack.IgnorePlugin(/vertx/),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

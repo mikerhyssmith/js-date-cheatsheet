@@ -50,9 +50,7 @@ module.exports = {
       {
         from: path.resolve(__dirname, '../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js')
       }
-    ]),
-    // get around with stupid warning
-    new webpack.IgnorePlugin(/vertx/),
+    ])
   ],
   optimization: {
     namedModules: true, // NamedModulesPlugin()
