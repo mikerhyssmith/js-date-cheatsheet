@@ -45,7 +45,7 @@ export class LibraryNavigation extends LitElement {
             
             <div class="navigation">
                 <tab-group navigationItems="${navigationItems}" activeItem="${activeItemLeft}"> </tab-group>
-                <img class="arrows" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
+                <img class="arrows" style="width: 5%; height: 5%;" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
                 <tab-group navigationItems="${navigationItems}" activeItem="${activeItemRight}"></tab-group>
             </div>
            `;
