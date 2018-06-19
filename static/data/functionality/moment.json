@@ -1,0 +1,17 @@
+{
+    "basic": {
+        "now": {
+            "code": "moment()"
+        },
+        "string": {
+            "code": "moment(\"2018-02-04\")",
+            "warning": "Not supplying an ISO 8601 or RFC 2822 formatted date will lead to inconsitencies between browsers"
+        },
+        "format": {
+            "code": "moment(\"2018-February-4th\", \"YYYY-MMMM-Do\")"
+        },
+        "UTC": {
+            "code": [ "moment.utc()", "moment.utc(\"2018-02-04\")" ]
+        }
+    }
+}

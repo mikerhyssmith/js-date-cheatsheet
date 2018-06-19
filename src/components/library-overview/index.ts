@@ -1,20 +1,24 @@
 import { LitElement, html } from '@polymer/lit-element';
-import {afterNextRender} from '@polymer/polymer/lib/utils/render-status.js';
+import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
 import '@polymer/paper-card/paper-card.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import Library from '../../models/Library';
 
 export class LibraryOverview extends LitElement {
 
+    clocks = ["🕐", "⏰", "⌚", "⏱", "⏲", "⏳", "📅", "📆" , "🗓️"]
+
     static get properties() {
         return {
             library: Library,
-            libraryName: String
+            libraryName: String,
+            icon: String
         }
     }
 
     constructor() {
         super();
+        this.icon = this.clocks[Math.floor(Math.random()*this.clocks.length)];
     }
 
     ready() {
@@ -34,7 +38,7 @@ export class LibraryOverview extends LitElement {
         return libraryName !== undefined;
     }
 
-    _render({library}) {
+    _render({library, icon}) {
         return html`
             <style>
                 .library-overview {
@@ -80,7 +84,7 @@ export class LibraryOverview extends LitElement {
                 .card-actions {
                     padding: 0 16px;
                 }                
-
+                
                 .image-buttons {
                     float: right;
                 }
@@ -88,10 +92,10 @@ export class LibraryOverview extends LitElement {
             </style>
             
             ${library? 
-                    html`<paper-card class="library-overview">
+              html`<paper-card class="library-overview">
                 <div class="card-content">
                     <div class="library-header">
-                        <div class="library-logo">⌚</div>
+                        <div class="library-logo">${icon}</div>
                         <div class="library-title">${library.name}</div>
                         <div class="library-bundle-size">
                             <span>${library.bundleSize}</span>kb
@@ -113,12 +117,30 @@ export class LibraryOverview extends LitElement {
                     </div>
                 </div>
             </paper-card>`:
-            html`<div >Loading....</div>` }
+            html`<paper-card class="library-overview loading-background">
+                <div class="card-content">
+                <div class="library-header loading">
+                    <div class="library-logo">${icon}</div>
+                    <div class="library-title"></div>
+                    <div class="library-bundle-size">
+                        <span></span>kb
+                    </div>
+                </div>
+                <div class="library-info loading">
+
+                </div>
+            </div>
+            <div class="card-actions loading">
+            
+            </div>
+            
+            
+            </paper-card>` }
            `;
     }
 
     private getLibraryData(libraryName) {
-        return fetch(`static/data/${libraryName}-overview.json`).then((response) => {
+        return fetch(`static/data/overview/${libraryName}.json`).then((response) => {
             return response.json();
         });
     }

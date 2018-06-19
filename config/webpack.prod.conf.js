@@ -1,16 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    // vendor: ['./src/vendor'],
     app: './src/index'
   },
+  mode: "production",
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, '..', 'dist')
@@ -39,18 +37,6 @@ module.exports = {
       /environments\/environment\.ts/,
       'environment.prod.ts'
     ),
-    // new CommonsChunkPlugin({
-    //   // The order of this array matters
-    //   names: ['vendor'],
-    //   minChunks: Infinity
-    // }),
-    // not able to uglify, probably related to: https://github.com/Polymer/polymer-cli/issues/388
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false
-    //   },
-    //   sourceMap: true
-    // }),
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
@@ -67,5 +53,14 @@ module.exports = {
     ]),
     // get around with stupid warning
     new webpack.IgnorePlugin(/vertx/),
-  ]
+  ],
+  optimization: {
+    namedModules: true, // NamedModulesPlugin()
+    splitChunks: { // CommonsChunkPlugin()
+        name: 'vendor',
+        minChunks: 2
+    },
+    noEmitOnErrors: true, // NoEmitOnErrorsPlugin
+    concatenateModules: true //ModuleConcatenationPlugin
+}
 };

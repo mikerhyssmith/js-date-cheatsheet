@@ -1,0 +1,18 @@
+{
+    "basic": {
+        "now": {
+            "code": "DateTime.local();"
+        },
+        "string": {
+            "code": ["DateTime.fromISO('2016-05-25');", "DateTime.fromRFC2822('Tue, 01 Nov 2016 13:23:12 +0630');", "DateTime.fromHTTP('Sunday, 06-Nov-94 08:49:37 GMT');"],
+            "info": "Does not supply a generic parse function but a function for each format"
+        },
+        "format": {
+            "code": "DateTime.fromFormat('2018-February-4', 'yyyy-MMMM-d');",
+            "warning": "No support for day ordinals eg. 4th"
+        },
+        "UTC": {
+            "code": [ "DateTime.utc()", "DateTime.utc(2018, 2, 4)"]
+        }
+    }
+}
