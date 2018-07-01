@@ -7,6 +7,7 @@ import { NavigationTab } from './library-navigation/tab';
 import { LibraryOverview } from './library-overview';
 import { CheckMark } from './check-mark';
 import { LibraryFunctionality } from './library-functionality';
+import { LibraryFunctionalitySection } from './library-functionality/section';
 
 // add custom elements here
 const elements = {
@@ -17,7 +18,8 @@ const elements = {
     TabGroup,
     LibraryOverview,
     CheckMark,
-    LibraryFunctionality
+    LibraryFunctionality,
+    LibraryFunctionalitySection
 };
 
 // register all components as kebab case

@@ -1,15 +1,20 @@
 {
-    "basic": {
-        "now": {
+    "basic": [
+        {
+            "title": "now",
             "code": "Date(Date.now())"
         },
-        "string": {
+        {
+            "title": "string",
             "code": "Date('2018-02-04')",
             "warning": "The results of passing a string via the Date constructor vary between browsers"
         },
-        "format": null,
-        "UTC": {
+        {
+            "title": "format"
+        },
+        {
+            "UTC": "now",
             "code": "Date(Date.UTC(2018, 2, 4))"
         }
-    }
+    ]
 }

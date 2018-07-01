@@ -7,7 +7,8 @@ export class LibraryFunctionality extends LitElement {
     static get properties() {
         return {
           name: String,
-          libraryData: LibraryData
+          libraryData: LibraryData,
+          sections: Array<String>()
         }
     }
 
@@ -24,6 +25,8 @@ export class LibraryFunctionality extends LitElement {
             this.getLibraryData(this.name).then((response) => {
                 // @ts-ignore
                 this.libraryData = response;
+                // @ts-ignore
+                this.sections = Object.keys(response);
             });
         });
     }
@@ -32,17 +35,42 @@ export class LibraryFunctionality extends LitElement {
         return libraryData !== undefined;
     }
 
-    _render({libraryData}) {
+    _render({sections, libraryData}) {
         return html`
             <style>
+                .library-functionality {
+                    width: 500px;
+                }
+                
+                .library-functionality-title {
+                    text-transform: capitalize;
+                    overflow: hidden;
+                    margin-bottom: 10px;
+                }
 
+                .library-functionality-title:after {
+                    content:"";
+                    display: inline-block;
+                    height: 0.5em;
+                    vertical-align: middle;
+                    width: 100%;
+                    margin-right: -100%;
+                    margin-left: 10px;
+                    border-top: 1px solid  #41EAD4;
+                    margin-bottom: -15px;
+                }
             
             </style>
-        
-            <div class="library-functionality-title"> 
+            <div class="library-functionality">
+                ${sections.map((section) => html` 
+                    <div class="library-functionality-title"> 
+                        ${section}
+                    </div>
 
-            </div>
-            `
+                    <library-functionality-section codeItems="${libraryData[section]}"> </library-functionality-section>
+                `)}
+            </div>`
+           
     }
 
     private getLibraryData(name) {

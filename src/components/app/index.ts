@@ -48,6 +48,10 @@ export class MyApp extends LitElement {
                     margin: 10px;
                 }
 
+                .app-functionality-left {
+                    width: 325px;
+                }
+
 
             </style>
             
@@ -62,7 +66,8 @@ export class MyApp extends LitElement {
             
             <library-navigation libraryItems="${libraries}"></library-navigation>
             
-            <library-functionality name="${"moment"}"> </library-functionality> 
+            <library-functionality class="app-functionality-left" name="${"moment"}"> </library-functionality> 
+            <library-functionality class="app-functionality-right" name="${"date-fns"}"> </library-functionality> 
             
             <app-footer>
             </app-footer>`;

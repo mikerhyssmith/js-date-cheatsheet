@@ -1,21 +1,25 @@
 {
-    "basic": {
-        "now": {
+    "basic": [
+        {
+            "title": "now",
             "code": "Date(Date.now())",
             "info": "date-fns uses native date wherever possible"
         },
-        "string": {
+        {
+            "title": "string",
             "code": "parse('2018-02-04')",
             "info": "Accepts ISO 8601 format but will attempt to parse any other inputs"
         },
-        "format": {
+        {
+            "title": "format",
             "code": "parse(\"2018-February-4th\", \"YYYY-MMMM-do\")",
             "warning": "Parsing with a format will only be available in version 2"
         },
-        "UTC": {
+        {
+            "title": "UTC",
             "code": "Date(Date.UTC(2018, 2, 4))",
             "info": "date-fns uses native date wherever possible, open issue to add better support for UTC dates in date-fns"
         }
-    }
+    ]
 }
 
