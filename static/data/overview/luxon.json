@@ -2,7 +2,7 @@
     "name": "Luxon",
     "bundleSize": 53,
     "treeShakeable": true,
-    "timeZoneSuport": true,
+    "timeZoneSupport": true,
     "github": "https://github.com/moment/luxon",
     "website": "https://moment.github.io/luxon/"    
 

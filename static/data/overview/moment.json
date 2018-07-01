@@ -2,7 +2,7 @@
     "name": "Moment",
     "bundleSize": 200,
     "treeShakeable": false,
-    "timeZoneSuport": true,
+    "timeZoneSupport": true,
     "github": "https://github.com/moment/moment/",
     "website": "https://momentjs.com/"    
 

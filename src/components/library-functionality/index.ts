@@ -1,11 +1,13 @@
 import { LitElement, html } from '@polymer/lit-element';
 import { afterNextRender } from '@polymer/polymer/lib/utils/render-status.js';
+import LibraryData from '../../models/LibraryData';
 
 export class LibraryFunctionality extends LitElement {
 
     static get properties() {
         return {
-          name: String
+          name: String,
+          libraryData: LibraryData
         }
     }
 
@@ -21,17 +23,25 @@ export class LibraryFunctionality extends LitElement {
             // @ts-ignore
             this.getLibraryData(this.name).then((response) => {
                 // @ts-ignore
-                this.library = response;
+                this.libraryData = response;
             });
         });
     }
 
-    _render({}) {
+    _shouldRender({libraryData}) {
+        return libraryData !== undefined;
+    }
+
+    _render({libraryData}) {
         return html`
             <style>
 
             
             </style>
+        
+            <div class="library-functionality-title"> 
+
+            </div>
             `
     }
 

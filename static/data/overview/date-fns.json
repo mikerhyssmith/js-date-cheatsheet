@@ -2,8 +2,7 @@
     "name": "date-fns",
     "bundleSize": 64,
     "treeShakeable": true,
-    "timeZoneSuport": true,
+    "timeZoneSupport": true,
     "github": "https://github.com/date-fns/date-fns",
     "website": "https://date-fns.org/"    
-
 }

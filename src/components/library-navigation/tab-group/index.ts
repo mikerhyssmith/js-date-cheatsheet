@@ -9,7 +9,8 @@ export class TabGroup extends LitElement {
                 type: Array<String>(),
                 readOnly: true
             },
-            activeItem: String
+            activeItem: String,
+            selectItem: Function
         }
     }
 

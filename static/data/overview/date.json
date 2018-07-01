@@ -2,7 +2,7 @@
     "name": "Date",
     "bundleSize": 0,
     "treeShakeable": null,
-    "timeZoneSuport": true,
+    "timeZoneSupport": true,
     "github": null,
     "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"    
 

@@ -62,6 +62,7 @@ export class MyApp extends LitElement {
             
             <library-navigation libraryItems="${libraries}"></library-navigation>
             
+            <library-functionality name="${"moment"}"> </library-functionality> 
             
             <app-footer>
             </app-footer>`;
