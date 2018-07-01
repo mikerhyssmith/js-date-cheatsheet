@@ -31,6 +31,11 @@ export class MyApp extends LitElement {
                     vertical-align: bottom;
                 }
 
+                .intro {
+                    text-align: center;
+                    padding: 40px;
+                }
+
                 .library-overviews {
                     display: flex;
                     flex-direction: row;
@@ -47,6 +52,9 @@ export class MyApp extends LitElement {
             </style>
             
             <h1 class="title"><img class="header-logo" alt="JavaScript" src='static/js.png'> Date Cheatsheet</h1>
+            <div class="intro">
+                Dates in JavaScript are hard, lets demystify the options!
+            </div>
             <div class ="library-overviews"> 
                 ${libraries ? html`  ${libraries.map((item) => html` <div class="library-overview-item"> <library-overview libraryName="${item.name}"></library-overview> </div> `)}` : html `` }
             </div>

@@ -22,10 +22,11 @@ export class CheckMark extends LitElement {
                 color: red;
             }
         </style>
-                ${state? 
-                    html`<span class="tick">&#10003;</span>`:
-                    html`<span class="cross">&#10005;</span>`  }  
-        
-           `;
+        ${state !== undefined? 
+             html ` ${state? 
+                html`<span class="tick">&#10003;</span>`:
+                html`<span class="cross">&#10005;</span>`  }` :
+                html`<span class="not-applicable">&#8210;</span>`
+        }   `;
     }
 }
