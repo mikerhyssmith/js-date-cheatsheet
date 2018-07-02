@@ -55,6 +55,7 @@ export class MyApp extends LitElement {
                     flex-wrap: wrap;
                     width: 1100px;
                     margin: 0 auto;
+                    margin-bottom: 30px;
                 }
 
                 .library-overview-item {

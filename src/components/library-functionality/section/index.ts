@@ -26,6 +26,7 @@ export class LibraryFunctionalitySection extends LitElement {
                 .code-item {
                     display:flex;
                     justify-content: space-between;
+                    margin-bottom: 5px;
                 }
 
                 .code-item-title {

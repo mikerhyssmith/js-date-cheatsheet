@@ -1,5 +1,5 @@
 {
-    "basic": [
+    "basics": [
         {
             "title": "now",
             "code": "moment()"
@@ -15,7 +15,22 @@
         },
         {
             "title": "UTC",
-            "code": [ "moment.utc()", "moment.utc(\"2018-02-04\")" ]
+            "code": "moment.utc()"
+        }
+    ],
+
+    "modification": [
+        {
+            "title": "add",
+            "code": ["moment().add(10, 'seconds')", "moment().add(14, 'minutes')", "moment().add(24, 'hours')", "moment().add(31, 'days')"]
+        },
+        {
+            "title": "subtract",
+            "code": ["moment().subtract(10, 'seconds')", "moment().subtract(14, 'minutes')", "moment().subtract(24, 'hours)", "moment().subtract(31, 'days')"]
+        },
+        {
+            "title": "change",
+            "code": ["moment().seconds(10)", "moment().hours(24)", "moment().date(31)", "moment().day(1)"]
         }
     ]
 }

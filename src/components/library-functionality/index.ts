@@ -42,6 +42,7 @@ export class LibraryFunctionality extends LitElement {
             <style>
                 .library-functionality {
                     min-width: 520px;
+                    margin-bottom: 20px;
                 }
                 
                 .library-functionality-title {

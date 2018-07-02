@@ -1,5 +1,5 @@
 {
-    "basic": [
+    "basics": [
         {
             "title": "now",
             "code": "Date(Date.now())",
@@ -19,6 +19,21 @@
             "title": "UTC",
             "code": "Date(Date.UTC(2018, 2, 4))",
             "info": "date-fns uses native date wherever possible, open issue to add better support for UTC dates in date-fns"
+        }
+    ],
+
+    "modification": [
+        {
+            "title": "add",
+            "code": ["addSeconds(date, 10)", "addMinutes(date, 14)", "addHours(date, 24)", "addDays(date, 31)"]
+        },
+        {
+            "title": "subtract",
+            "code": ["subSeconds(date, 10)", "subMinutes(date, 14)", "subHours(date, 24)", "subDays(date, 31)"]
+        },
+        {
+            "title": "change",
+            "code": ["setSeconds(date, 10)", "setHours(date, 24)", "setDate(date, 31)", "setDay(date, 1)"]
         }
     ]
 }
