@@ -47,6 +47,7 @@ export class LibraryNavigation extends LitElement {
                 justify-content: space-between;
                 width: 60%;
                 margin: 0 auto;
+                margin-bottom: 20px;
             }
       
             </style>

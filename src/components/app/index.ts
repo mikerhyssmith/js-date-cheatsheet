@@ -65,6 +65,13 @@ export class MyApp extends LitElement {
                     width: 325px;
                 }
 
+                .library-functionality-wrapper {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 60%;
+                    margin: 0 auto;
+                }
+
 
             </style>
             
@@ -78,9 +85,10 @@ export class MyApp extends LitElement {
             
             
             <library-navigation selectActiveItemLeft="${(item) => this.selectActiveItemLeft(item)}" selectActiveItemRight="${(item) => this.selectActiveItemRight(item)}" activeItemLeft="${activeItemLeft}" activeItemRight="${activeItemRight}" libraryItems="${libraries}"></library-navigation>
-            <div> ${activeItemLeft} </div>
-            <library-functionality class="app-functionality-left" name="${activeItemLeft}"> </library-functionality> 
-            <library-functionality class="app-functionality-right" name="${activeItemRight}"> </library-functionality> 
+            <div class="library-functionality-wrapper">
+                <library-functionality class="app-functionality-left" name="${activeItemLeft}"> </library-functionality> 
+                <library-functionality class="app-functionality-right" name="${activeItemRight}"> </library-functionality>
+            </div
             
             <app-footer>
             </app-footer>`;
