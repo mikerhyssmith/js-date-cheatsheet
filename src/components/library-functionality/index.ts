@@ -21,19 +21,16 @@ export class LibraryFunctionality extends LitElement {
 
          
         afterNextRender(this, function() {
-            // @ts-ignore
-            this.getLibraryData(this.name).then((response) => {
-                // @ts-ignore
-                this.libraryData = response;
-                // @ts-ignore
-                this.sections = Object.keys(response);
-            });
+            //@ts-ignore
+            this.loadData();
         });
     }
 
     _propertiesChanged(props, changed, oldProps) {
         super._propertiesChanged(props, changed, oldProps);
-        console.log('PROPERTIES CHANGED');
+        if(Object.keys(changed).indexOf('name') > -1) {
+            this.loadData();
+        }
     }
 
     _shouldRender({libraryData}) {
@@ -81,6 +78,13 @@ export class LibraryFunctionality extends LitElement {
     private getLibraryData(name) {
         return fetch(`static/data/functionality/${name}.json`).then((response) => {
             return response.json();
+        });
+    }
+
+    private loadData() {
+        this.getLibraryData(this.name).then((response) => {
+            this.libraryData = response;
+            this.sections = Object.keys(response);
         });
     }
 }
