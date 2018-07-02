@@ -35,6 +35,15 @@ export class LibraryFunctionalitySection extends LitElement {
                 .code-item-code-example {
                     flex: 3;
                 }
+                
+                .code-list {
+                    padding: 0;
+                    margin: 0;
+                }
+                .code-list-item {
+                    list-style: none;
+                    list-style-position: inside;
+                }
 
             
             </style>
@@ -46,9 +55,24 @@ export class LibraryFunctionalitySection extends LitElement {
                     </div>
 
                     <div class="code-item-code-example"> 
-                        <code>
-                            ${codeItem.code}
-                        </code>
+                        ${Array.isArray(codeItem.code)? 
+                            html `
+                            <ul class="code-list">
+                                ${codeItem.code.map(codeItem => html `
+                                    <li class="code-list-item">
+                                        <code>
+                                            ${codeItem}
+                                        </code>
+                                    </li>
+                                     `
+                                   
+                                )}
+                                </ul>` : 
+                            html `
+                                <code>
+                                    ${codeItem.code}
+                                </code>` 
+                        }
                     </div>
                 </div>
             `

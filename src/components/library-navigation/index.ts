@@ -36,12 +36,6 @@ export class LibraryNavigation extends LitElement {
         const navigationItems = libraryItems.map(item => item.prettyName);
         return html`
             <style>
-            .arrows {
-                flex: 0;
-                width: 50px;
-                height: 50px;
-            }
-
             .navigation {
                 display: flex;
                 justify-content: space-between;

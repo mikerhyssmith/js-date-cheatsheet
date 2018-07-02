@@ -6,7 +6,7 @@
         },
         {
             "title": "string",
-            "code": ["DateTime.fromISO('2016-05-25');", "DateTime.fromRFC2822('Tue, 01 Nov 2016 13:23:12 +0630');", "DateTime.fromHTTP('Sunday, 06-Nov-94 08:49:37 GMT');"],
+            "code": ["DateTime.fromISO('2016-05-25');",  "DateTime.fromHTTP('Sunday, 06-Nov-94 08:49:37 GMT');"],
             "info": "Does not supply a generic parse function but a function for each format"
         },
         {

@@ -88,10 +88,9 @@ export class MyApp extends LitElement {
             <div class="library-functionality-wrapper">
                 <library-functionality class="app-functionality-left" name="${activeItemLeft}"> </library-functionality> 
                 <library-functionality class="app-functionality-right" name="${activeItemRight}"> </library-functionality>
-            </div
+            </div>
             
-            <app-footer>
-            </app-footer>`;
+            <app-footer></app-footer>`;
     }
 
     private async getData() {
