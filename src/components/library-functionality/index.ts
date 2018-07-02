@@ -42,6 +42,9 @@ export class LibraryFunctionality extends LitElement {
             <style>
                 .library-functionality {
                     min-width: 520px;
+                }
+
+                .library-functionality-item {
                     margin-bottom: 20px;
                 }
                 
@@ -65,12 +68,14 @@ export class LibraryFunctionality extends LitElement {
             
             </style>
             <div class="library-functionality">
-                ${sections.map((section) => html` 
-                    <div class="library-functionality-title"> 
-                        ${section}
-                    </div>
+                ${sections.map((section) => html`
+                    <div class="library-functionality-item">
+                        <div class="library-functionality-title"> 
+                            ${section}
+                        </div>
 
-                    <library-functionality-section codeItems="${libraryData[section]}"> </library-functionality-section>
+                        <library-functionality-section codeItems="${libraryData[section]}"> </library-functionality-section>
+                    </div>
                 `)}
             </div>`
            

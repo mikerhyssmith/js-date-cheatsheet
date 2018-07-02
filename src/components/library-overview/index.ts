@@ -44,6 +44,7 @@ export class LibraryOverview extends LitElement {
                 .library-overview {
                     color: black;
                     min-width: 250px;
+                    min-height: 149px;
                 }
 
                 .library-header {
