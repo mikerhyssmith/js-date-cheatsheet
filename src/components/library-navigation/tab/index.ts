@@ -5,7 +5,7 @@ export class NavigationTab extends LitElement {
     static get properties() {
         return {
             name: String,
-            active: Boolean
+            active: Boolean,
         }
     }
 

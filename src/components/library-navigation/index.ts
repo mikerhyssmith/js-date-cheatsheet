@@ -9,22 +9,30 @@ export class LibraryNavigation extends LitElement {
                 type: Array<LibraryObjectResponse>(),
                 readOnly: true
             },
-            activeItemLeft: String,
-            activeItemRight: String
+            activeItemLeft: {
+                type: String,
+                notify: true,
+                reflectToAttribute: true
+            },
+            activeItemRight: {
+                type: String,
+                notify: true,
+                reflectToAttribute: true
+            },
+            selectActiveItemLeft: Function,
+            selectActiveItemRight: Function
         }
     }
 
     constructor() {
         super();
-        this.activeItemLeft = 'moment';
-        this.activeItemRight = 'date-fns';
     }
 
     _shouldRender({libraryItems}) {
         return libraryItems !== undefined;
     }
 
-    _render({ libraryItems, activeItemLeft, activeItemRight }) {
+    _render({ libraryItems, activeItemLeft, activeItemRight, selectActiveItemLeft, selectActiveItemRight }) {
         const navigationItems = libraryItems.map(item => item.prettyName);
         return html`
             <style>
@@ -44,9 +52,9 @@ export class LibraryNavigation extends LitElement {
             </style>
             
             <div class="navigation">
-                <tab-group navigationItems="${navigationItems}" activeItem="${activeItemLeft}"> </tab-group>
+                <tab-group selectTab="${(item) => selectActiveItemLeft(item)}" navigationItems="${navigationItems}" activeItem="${activeItemLeft}"> </tab-group>
                 <img class="arrows" style="width: 5%; height: 5%;" src="static/horizontal-arrow.svg"  alt="Horizontal two headed arrow"> 
-                <tab-group  navigationItems="${navigationItems}" activeItem="${activeItemRight}"></tab-group>
+                <tab-group selectTab="${(item) => selectActiveItemRight(item)}" navigationItems="${navigationItems}" activeItem="${activeItemRight}"></tab-group>
             </div>
            `;
     }

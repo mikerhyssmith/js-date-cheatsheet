@@ -31,6 +31,11 @@ export class LibraryFunctionality extends LitElement {
         });
     }
 
+    _propertiesChanged(props, changed, oldProps) {
+        super._propertiesChanged(props, changed, oldProps);
+        console.log('PROPERTIES CHANGED');
+    }
+
     _shouldRender({libraryData}) {
         return libraryData !== undefined;
     }

@@ -6,12 +6,25 @@ export class MyApp extends LitElement {
 
     static get properties() {
         return {
-            libraries: Array<LibraryObjectResponse>()
+            libraries: Array<LibraryObjectResponse>(),
+            activeItemLeft: {
+                type: String,
+                notify: true,
+                reflectToAttribute: true
+            },
+            activeItemRight: {
+                type: String,
+                notify: true,
+                reflectToAttribute: true
+            },
         }
     }
     
     constructor() {
         super();
+
+        this.activeItemLeft = 'moment';
+        this.activeItemRight = 'date-fns';
 
         this.getData().then((response: LibraryResponse) => {
             this.libraries = response.libraries;
@@ -19,7 +32,7 @@ export class MyApp extends LitElement {
     }
 
     // Define a string template instead of a `<template>` element.
-    _render({libraries}) {
+    _render({libraries, activeItemLeft, activeItemRight}) {
         return html`
             <style>
                 .title {
@@ -64,10 +77,10 @@ export class MyApp extends LitElement {
             </div>
             
             
-            <library-navigation libraryItems="${libraries}"></library-navigation>
-            
-            <library-functionality class="app-functionality-left" name="${"moment"}"> </library-functionality> 
-            <library-functionality class="app-functionality-right" name="${"date-fns"}"> </library-functionality> 
+            <library-navigation selectActiveItemLeft="${(item) => this.selectActiveItemLeft(item)}" selectActiveItemRight="${(item) => this.selectActiveItemRight(item)}" activeItemLeft="${activeItemLeft}" activeItemRight="${activeItemRight}" libraryItems="${libraries}"></library-navigation>
+            <div> ${activeItemLeft} </div>
+            <library-functionality class="app-functionality-left" name="${activeItemLeft}"> </library-functionality> 
+            <library-functionality class="app-functionality-right" name="${activeItemRight}"> </library-functionality> 
             
             <app-footer>
             </app-footer>`;
@@ -77,5 +90,13 @@ export class MyApp extends LitElement {
         return fetch('static/data/data.json').then((response) => {
             return response.json();
         });
+    }
+
+    private selectActiveItemLeft(name) {
+        this.activeItemLeft = name;
+    }
+
+    private selectActiveItemRight(name) {
+        this.activeItemRight = name;
     }
 }

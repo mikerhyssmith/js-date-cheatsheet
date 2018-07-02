@@ -9,8 +9,12 @@ export class TabGroup extends LitElement {
                 type: Array<String>(),
                 readOnly: true
             },
-            activeItem: String,
-            selectItem: Function
+            activeItem:  {
+                type: String,
+                notify: true,
+                reflectToAttribute: true
+            },
+            selectTab: Function
         }
     }
 
@@ -28,7 +32,7 @@ export class TabGroup extends LitElement {
             </style>
             <div class="tab-group">
                 ${navigationItems.map((item) => html`
-                    <navigation-tab name=${item} active=${item === activeItem} />
+                    <navigation-tab on-click=${() => this.selectTab(item)} name=${item} active=${item === activeItem} />
                 `)}
             </div>
            `;
