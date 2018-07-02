@@ -36,8 +36,7 @@ export class AppFooter extends LitElement {
             </style>
             
            <div class="footer">
-        
-                Built with <img class="footer-logo" alt="polymer" src='static/polymer.png'> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
+                Built with <a href="https://github.com/mikerhyssmith/js-date-cheatsheet"> <img class="footer-logo" alt="polymer" src='static/polymer.png'> </a> by <a class="footer-link" href="https://www.twitter.com/mikerhyssmith"> @mikerhyssmith </a>
            </div>`;
     }
 
