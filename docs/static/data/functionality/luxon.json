@@ -1,18 +1,37 @@
 {
-    "basic": {
-        "now": {
+    "basics": [
+        {
+            "title": "now",
             "code": "DateTime.local();"
         },
-        "string": {
-            "code": ["DateTime.fromISO('2016-05-25');", "DateTime.fromRFC2822('Tue, 01 Nov 2016 13:23:12 +0630');", "DateTime.fromHTTP('Sunday, 06-Nov-94 08:49:37 GMT');"],
+        {
+            "title": "string",
+            "code": "DateTime.fromISO('2016-05-25');",
             "info": "Does not supply a generic parse function but a function for each format"
         },
-        "format": {
+        {
+            "title": "format",
             "code": "DateTime.fromFormat('2018-February-4', 'yyyy-MMMM-d');",
             "warning": "No support for day ordinals eg. 4th"
         },
-        "UTC": {
-            "code": [ "DateTime.utc()", "DateTime.utc(2018, 2, 4)"]
+        {
+            "title": "UTC",
+            "code": "DateTime.utc()"
         }
-    }
+    ],
+
+    "modification": [
+        {
+            "title": "add",
+            "code": ["dateTime.plus({seconds: 10})", "dateTime.plus({minutes: 14})", "dateTime.plus({hours: 24})", "dateTime.plus({days: 31})"]
+        },
+        {
+            "title": "subtract",
+            "code": ["dateTime.minus({seconds: 10})", "dateTime.minus({minutes: 14})", "dateTime.minus({hours: 24})", "dateTime.minus({days: 31})"]
+        },
+        {
+            "title": "change",
+            "code": ["dateTime.set({seconds: 10})", "dateTime.set({hour: 14})", "dateTime.set({day: 24})", "dateTime.set({weekday: 1})"]
+        }
+    ]
 }
