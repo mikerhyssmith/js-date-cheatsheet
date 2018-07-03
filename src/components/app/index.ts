@@ -101,10 +101,10 @@ export class MyApp extends LitElement {
     }
 
     private selectActiveItemLeft(name) {
-        this.activeItemLeft = name;
+        this.activeItemLeft = name.toLowerCase();
     }
 
     private selectActiveItemRight(name) {
-        this.activeItemRight = name;
+        this.activeItemRight = name.toLowerCase();
     }
 }
