@@ -11,7 +11,7 @@
         },
         {
             "title": "format",
-            "code": "DateTime.fromFormat('2018-February-4', 'yyyy-MMMM-d');",
+            "code": "DateTime.fromFormat('2018-02-4', 'yyyy-MM-d');",
             "warning": "No support for day ordinals eg. 4th"
         },
         {
