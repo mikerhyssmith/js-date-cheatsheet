@@ -62,17 +62,6 @@ export class MyApp extends LitElement {
                     margin: 10px;
                 }
 
-                .app-functionality-left {
-                    width: 325px;
-                }
-
-                .library-functionality-wrapper {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 60%;
-                    margin: 0 auto;
-                }
-
 
             </style>
             
@@ -84,12 +73,13 @@ export class MyApp extends LitElement {
                 ${libraries ? html`  ${libraries.map((item) => html` <div class="library-overview-item"> <library-overview libraryName="${item.name}"></library-overview> </div> `)}` : html `` }
             </div>
             
-            
-            <library-navigation selectActiveItemLeft="${(item) => this.selectActiveItemLeft(item)}" selectActiveItemRight="${(item) => this.selectActiveItemRight(item)}" activeItemLeft="${activeItemLeft}" activeItemRight="${activeItemRight}" libraryItems="${libraries}"></library-navigation>
-            <div class="library-functionality-wrapper">
-                <library-functionality class="app-functionality-left" name="${activeItemLeft}"> </library-functionality> 
-                <library-functionality class="app-functionality-right" name="${activeItemRight}"> </library-functionality>
-            </div>
+            <date-libraries
+                selectActiveItemLeft="${(item) => this.selectActiveItemLeft(item)}"
+                selectActiveItemRight="${(item) => this.selectActiveItemRight(item)}" 
+                activeItemLeft="${activeItemLeft}" activeItemRight="${activeItemRight}" 
+                libraryItems="${libraries}"> 
+            </date-libraries>
+   
             
             <app-footer></app-footer>`;
     }
